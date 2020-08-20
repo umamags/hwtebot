@@ -23,20 +23,40 @@
 - incident
 - create incident
 
+## intent:get_started
+- start
+- please start
+
+## intent:incdesc
+- When am I going to receive my travel card
+- When am I going to [receive my travel card](desc) 
+- how long it will take to [deliver the travel card](desc) 
+- i need someone from helpdesk to contact me regarding [some queries related to my card](desc) 
+- why is it taking time to [deliver the travel card](desc)
+- I want to [contact helpdesk](desc) team. I have applied for the card long time ago and did not receive any update yet
+- I already hold a card and want to cancel this application
+- please take my application on priority as I have some corporate trip coming week 
+- why is my application taking so much time 
+- where is the delivery of my card stuck
+
+## intent:srnumber
+- SR [SR12345RE](SR)
+- SR number is [SR12345RE](SR)
+
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
-
+<!-- 
 ## intent:affirm
 - yes
 - indeed
 - of course
 - that sounds good
-- correct
-
+- correct -->
+<!-- 
 ## intent:deny
 - no
 - never
@@ -72,3 +92,4 @@
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+ -->

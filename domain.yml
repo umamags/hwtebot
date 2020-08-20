@@ -9,49 +9,71 @@ intents:
   - newtravelcard
   - statuscard
   - createticket
-  - incdescp
+  - incdesc
+  - srnumber
+  - get_started
+
+entities: 
+  - desc 
+  - SR
+
+slots:
+   desc:
+     type: unfeaturized
+   SR:
+     type: unfeaturized 
 
 actions:
-  - action_newtravelcard
-  - action_statuscard
+#   - action_newtravelcard
+#   - action_statuscard
   - action_Incident
+  - action_createIncident
+  - action_SR_Update
   
 responses:
   utter_greet:
-  - text: "Hi This is Amelo, your virtual agent I can help you with your Card Application related queries - Status of applied card / Apply for a new card"
-#   buttons:
-#       - title: "Hey"
-#       payload: "/greet"
-
-#  - text: "Please choose a category of your query - /n type 1 for Apply for new Travel card | type 2 for Status of already applied card"
-#   - type: header
-#       text:
-#       type: plain_text
-#       text: "\U0001F44B Hi This is Amelo, your virtual agent"
-#       emoji: true
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: "Hi This is Amelo, your virtual agent I can help you with your Card Application related queries. Please choose a category of your query"
+    buttons:
+        - title: "Status of applied card"
+          payload: '/statuscard'
+        - title: "Apply for a new card"
+          payload: '/newtravelcard'
+          
+  utter_welcome_message:
+  - text: "Hi This is Amelo, your virtual agent I can help you with your Card Application related queries. Please choose a category of your query"
+    buttons:
+        - title: "Status of applied card"
+          payload: '/statuscard'
+        - title: "Apply for a new card"
+          payload: '/newtravelcard'
+          
   utter_happy:
   - text: "Great, carry on!"
+  
+  utter_SR_button:
+  - text: "Did that answer your query?"
+    buttons:
+        - title: "Yes"
+          payload: '/goodbye'
+        - title: "No, I would like to create an incident"
+          payload: '/createticket'  
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "I am glad to know that. Thank you, have a good rest of the day."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_newtravelcard:
+  - text: "Please go to the following link to open the instruction document to apply new card"
+
+  utter_displaylink:
+  - text: "[Concur travel card registration](https://www.concur.co.in/)"
+
+  utter_statuscard:
+  - text: "Please provide the SR ticket #"
   
-#   utter_newtravelcard:
-#   - text: "Please go to www.google.com to open the instruction document to apply new card"
+  #   utter_iamabot:
+#   - text: "I am a bot, powered by Rasa."
   
-#   utter_statuscard:
-#   - text: "Please provide the SR ticket #"
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-  
