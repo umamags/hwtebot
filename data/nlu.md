@@ -38,6 +38,9 @@
 - please take my application on priority as I have some corporate trip coming week 
 - why is my application taking so much time 
 - where is the delivery of my card stuck
+- my [travel application has got stuck](desc) and i need to know the details
+
+
 
 ## intent:srnumber
 - SR [SR12345RE](SR)

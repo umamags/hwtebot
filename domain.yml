@@ -20,12 +20,11 @@ entities:
 slots:
    desc:
      type: unfeaturized
-   SR:
+   SRN:
      type: unfeaturized 
 
 actions:
-#   - action_newtravelcard
-#   - action_statuscard
+
   - action_Incident
   - action_createIncident
   - action_SR_Update
