@@ -17,6 +17,16 @@
 - applied card status 
 - updates on applied card
 
+## intent:cardapplication
+- card application 
+- card applying 
+
+## intent:cardlimit
+- card limit 
+- limit of my card 
+- limit of my travel card
+
+
 ## intent:createticket
 - create ticket
 - raise ticket
@@ -40,7 +50,16 @@
 - where is the delivery of my card stuck
 - my travel application has got stuck and i need to know the details
 - i want to issue for another travel card 
-- 
+ 
+## intent:increascardlimit
+- increase limit
+- increase card limit 
+- increase limit of my travel card
+
+## intent:statuscardlimit
+- how much limit is left for my card 
+- limit of my card
+- card limit
 
 ## intent:srnumber
 - SR [SR12345RE](srno)

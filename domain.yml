@@ -6,6 +6,10 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - cardapplication
+  - cardlimit
+  - increascardlimit
+  - statuscardlimit
   - newtravelcard
   - statuscard
   - createticket
@@ -28,20 +32,40 @@ actions:
   
 responses:
   utter_greet:
-  - text: "Hi This is Amelo, your virtual agent I can help you with your Card Application related queries. Please choose a category of your query"
+  - text: "Hi This is Amelo, your virtual agent. I can help you with your Card Application and Card Limit related queries. Please choose a category of your query"
     buttons:
-        - title: "Status of applied card"
-          payload: '/statuscard'
-        - title: "Apply for a new card"
-          payload: '/newtravelcard'
-          
+#         - title: "Status of applied card"
+#           payload: '/statuscard'
+#         - title: "Apply for a new card"
+#           payload: '/newtravelcard'
+        - title: "Card Application"
+          payload: '/cardapplication'
+        - title: "Card Limit"
+          payload: '/cardlimit'          
+
   utter_welcome_message:
-  - text: "Hi This is Amelo, your virtual agent I can help you with your Card Application related queries. Please choose a category of your query"
+  - text: "Hi This is Amelo, your virtual agent. I can help you with your Card Application related queries. Please choose a category of your query"
     buttons:
-        - title: "Status of applied card"
-          payload: '/statuscard'
-        - title: "Apply for a new card"
+        - title: "Card Application"
+          payload: '/cardapplication'
+        - title: "Card Limit"
+          payload: '/cardlimit' 
+          
+  utter_card_application:
+  - text: "Please choose a category of your query"
+    buttons:
+        - title: "Apply for new Travel card"
           payload: '/newtravelcard'
+        - title: "Status of applied card "
+          payload: '/statuscard'
+          
+  utter_card_limit:
+  - text: "Please choose a category of your query"
+    buttons:
+        - title: "Increase Limit"
+          payload: '/increascardlimit'
+        - title: "Status of card Limit"
+          payload: '/statuscardlimit'  
           
   utter_happy:
   - text: "Great, carry on!"
@@ -62,7 +86,16 @@ responses:
 
   utter_displaylink:
   - text: "[Concur travel card registration](https://www.concur.co.in/)"
-
+  
+  utter_increascardlimit:
+  - text: "Please follow the bellow link to open the CCAT for applying for limit increase"
+  
+  utter_statuscardlimit:
+  - text: "Please provide CCAT request #"
+ 
+  utter_CCATlink:
+  - text: "[CCAT](https://www.concur.co.in/)"
+ 
   utter_statuscard:
   - text: "Please provide the SR ticket #"
   
