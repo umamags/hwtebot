@@ -29,23 +29,26 @@
 
 ## intent:incdesc
 - When am I going to receive my travel card
-- When am I going to [receive my travel card](desc) 
-- how long it will take to [deliver the travel card](desc) 
-- i need someone from helpdesk to contact me regarding [some queries related to my card](desc) 
-- why is it taking time to [deliver the travel card](desc)
-- I want to [contact helpdesk](desc) team. I have applied for the card long time ago and did not receive any update yet
+- When am I going to receive my travel card
+- how long it will take to deliver the travel card
+- i need someone from helpdesk to contact me regarding some queries related to my card
+- why is it taking time to deliver the travel card
+- I want to contact helpdesk team. I have applied for the card long time ago and did not receive any update yet
 - I already hold a card and want to cancel this application
 - please take my application on priority as I have some corporate trip coming week 
 - why is my application taking so much time 
 - where is the delivery of my card stuck
-- my [travel application has got stuck](desc) and i need to know the details
-
-
+- my travel application has got stuck and i need to know the details
+- i want to issue for another travel card 
+- 
 
 ## intent:srnumber
-- SR [SR12345RE](SR)
-- SR number is [SR12345RE](SR)
+- SR [SR12345RE](srno)
+- SR number is [SR12345RE](srno)
 
+
+## regex:srno
+- ^SR[a-zA-Z0-9]{7}
 
 ## intent:goodbye
 - bye

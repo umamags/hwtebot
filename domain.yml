@@ -14,12 +14,9 @@ intents:
   - get_started
 
 entities: 
-  - desc 
-  - SR
+  - srno
 
 slots:
-   desc:
-     type: unfeaturized
    SRN:
      type: unfeaturized 
 

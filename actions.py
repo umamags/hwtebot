@@ -33,8 +33,8 @@ class SRUpdate(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        SR = tracker.get_slot("SR")
-        print(SR)
+        SR = tracker.get_slot("srno")
+        print("____"+str(SR))
         print(type(SR))
        
         excel_file = 'C:/Users/Monalisa/Documents/Rasaproject/SRDetails.xlsx'
@@ -44,29 +44,30 @@ class SRUpdate(Action):
         update = df['Update'].where(df['SRNumber'] == SR)
        
         ETA = df['ETA'].where(df['SRNumber'] == SR)
-        for SRN in df['SRNumber']:
-            if SRN==str(SR):
-                print('Yes')
-                print(type(SRN))
-                print(type(SR))
-            else:
-                print(type(SRN))
-                print(type(SR))
-                print("No")
+        print("_*"+update)
+#         for SRN in df['SRNumber']:
+#             if SRN==str(SR):
+#                 print('Yes')
+#                 print(type(SRN))
+#                 print(type(SR))
+#             else:
+#                 print(type(SRN))
+#                 print(type(SR))
+#                 print("No")
         line = update.dropna()
         print(df['SRNumber'])
-        res = df.isin([SR]).any().any() 
-        print("___"+str(res))
-        if str(SR) in df.values :
-            print("\nThis value exists in Dataframe") 
-        exists = SR in df['SRNumber']
-        print("Exists - "+str(exists))
+#         res = df.isin([SR]).any().any() 
+#         print("___"+str(res))
+#         if str(SR) in df.values :
+#             print("\nThis value exists in Dataframe") 
+#         exists = SR in df['SRNumber']
+#         print("Exists - "+str(exists))
         lastitem = df['Update'].iloc[-1]
         lastitem2 = df['ETA'].iloc[-1]
         print("____"+lastitem)
         print(update.dropna())
 #         print(type(update))
-        message = "Last update : "+str(lastitem)
+        message = "Last update : "+str(lastitem)+df['SRNumber'].iloc[-1]
         message1  = "ETA: "+str(lastitem2)
         dispatcher.utter_message(text=message)
         dispatcher.utter_message(text=message1)
@@ -87,7 +88,7 @@ class ActionCreateIncident(Action):
         
         headers = {"Content-Type":"application/json","Accept":"application/json"}
         print(ticket)
-        desc = tracker.get_slot("desc")
+#         desc = tracker.get_slot("desc")
         response = requests.post(url, auth=(credentials_http.servicenow_user, credentials_http.servicenow_pwd), headers=headers ,data='{"short_description":"' + ticket + '"}')
         
         print("Action is running incident create")
